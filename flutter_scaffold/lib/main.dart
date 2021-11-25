@@ -12,7 +12,17 @@ void main() {
         color: Colors.white,
         child: Column(
           children: [
-            Text("Texto 01"),
+            Text(
+              "Teste de Scaffold", 
+              style: TextStyle(
+                fontSize: 20,
+                color: Colors.green,
+                letterSpacing: 5,
+                fontWeight: FontWeight.bold,
+                wordSpacing: 10,
+                decoration: TextDecoration.underline,
+              ),
+              ),
           ],
         ),
       ),

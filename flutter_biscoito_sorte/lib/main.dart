@@ -24,11 +24,14 @@ class _HomeState extends State<Home> {
           backgroundColor: Colors.black,
         ),
         body: Center(
+            child: Padding(
+          padding: EdgeInsets.all(10),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               CircleAvatar(
                 backgroundImage: AssetImage("images/biscoito_inteiro.jpg"),
-                radius: 80,
+                radius: 100,
                 backgroundColor: Colors.white,
               ),
               Text(
@@ -48,6 +51,6 @@ class _HomeState extends State<Home> {
               ),
             ],
           ),
-        ));
+        )));
   }
 }

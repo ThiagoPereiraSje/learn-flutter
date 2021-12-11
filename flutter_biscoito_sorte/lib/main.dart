@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,6 +17,27 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  // Declaração de variáveis
+  var imgBiscoito = "images/biscoito_inteiro.jpg";
+  var fraseDaSorte = "Clique no botão para gerar a frase!";
+  var listaFrases = [
+    "O importante não é vencer todos os dias, mas lutar sempre",
+    "É melhor conquistar a si mesmo do que vencer mil batalhas.",
+    "Tudo vale a pena quando a alma não é plena",
+    "Design é função, não forma.",
+  ];
+
+  // Declaração dos métodos
+  void quebrarBiscoito() {
+    print("clicou no botão");
+    var numero = Random().nextInt(listaFrases.length);
+
+    setState(() {
+      fraseDaSorte = listaFrases[numero];
+      imgBiscoito = "images/biscoito_quebrado.jpg";
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,12 +53,12 @@ class _HomeState extends State<Home> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               CircleAvatar(
-                backgroundImage: AssetImage("images/biscoito_inteiro.jpg"),
+                backgroundImage: AssetImage(imgBiscoito),
                 radius: 100,
                 backgroundColor: Colors.white,
               ),
               Text(
-                "Clique no botão para quebrar o biscoito!",
+                fraseDaSorte,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 20,
@@ -47,7 +70,7 @@ class _HomeState extends State<Home> {
                   primary: Colors.black,
                   onPrimary: Colors.white,
                 ),
-                onPressed: () {},
+                onPressed: quebrarBiscoito,
               ),
             ],
           ),
